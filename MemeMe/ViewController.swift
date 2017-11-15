@@ -41,6 +41,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerView.image = image
+        }
+        print("About to dismiss")
         dismiss(animated: true, completion: nil)
     }
     
