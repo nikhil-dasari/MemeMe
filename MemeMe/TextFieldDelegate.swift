@@ -16,7 +16,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
         NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
         NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedStringKey.strokeWidth.rawValue: -5.0 ]
-
+    
     //clear the placeholder text once the user taps into it
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.placeholder = ""
@@ -29,6 +29,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     }
 
     func setDefaultTextFieldAttributes(textField: UITextField) {
+        textField.delegate = self
         textField.defaultTextAttributes = self.memeTextAttributes
         textField.textAlignment = NSTextAlignment.center
 
